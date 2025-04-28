@@ -2,7 +2,6 @@ const Event = require("../models/eventModel");
 const User = require("../models/userModel");
 
 const eventController = {
-  // Create a new event
   async createEvent(req, res) {
     try {
       const { date } = req.body;
@@ -19,7 +18,6 @@ const eventController = {
     }
   },
 
-  // Get all events
   async getAllEvents(req, res) {
     try {
       const events = await Event.find({ date: { $gt: new Date() } }).populate(
@@ -31,7 +29,6 @@ const eventController = {
     }
   },
 
-  // Get a single event
   async getEvent(req, res) {
     try {
       const event = await Event.findById(req.params.eventId).populate(
@@ -44,7 +41,6 @@ const eventController = {
     }
   },
 
-  // Update an event
   async updateEvent(req, res) {
     try {
       const event = await Event.findById(req.params.eventId);
@@ -63,7 +59,6 @@ const eventController = {
     }
   },
 
-  // Delete an event
   async deleteEvent(req, res) {
     try {
       const event = await Event.findById(req.params.eventId);
@@ -78,7 +73,6 @@ const eventController = {
     }
   },
 
-  // Register for an event
   async registerForEvent(req, res) {
     try {
       const event = await Event.findById(req.params.eventId);
@@ -94,7 +88,6 @@ const eventController = {
     }
   },
 
-  // Cancel registration for an event
   async cancelRegistration(req, res) {
     try {
       const event = await Event.findById(req.params.eventId);
