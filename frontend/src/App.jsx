@@ -15,6 +15,7 @@ import HomePage from "./pages/HomePage";
 import Profile from "./pages/Profile";
 import CreateEvent from "./pages/CreateEvent";
 import EditEvent from "./pages/EditEvent";
+import "./styles/main.css";
 
 const App = () => {
   const isLoggedIn = localStorage.getItem("token");
